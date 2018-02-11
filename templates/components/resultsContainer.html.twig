@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="vertical-center" >
+        <div class="container wrapper" >
+            <div class="row" >
+
+                <div class="col-lg-2" >
+                    <strong >Name: </strong>
+                    <span >{{ userDetails.name }}</span>
+                    <br >
+                    <strong >Gender: </strong>
+                    <span >{{ userDetails.gender }}</span>
+                    <br >
+                    <strong >Age: </strong>
+                    <span >{{ userDetails.age }}</span>
+                    <span > Yrs Old</span>
+                    <br >
+                    <a href="/" class="btn btn-primary col-lg-12" >New Search</a>
+                </div>
+
+
+                <div class="col-lg-10" >
+                    <h3 class="text-center" >Search Results</h3>
+
+                    {% for result in results %}
+                    {% include 'components/singleResult.html.twig' %}
+                    {% endfor %}
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock body %}

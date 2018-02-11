@@ -1,0 +1,23 @@
+
+{% block form_row %}
+
+
+   <div class="input-group pull-left col-lg-{{ form.vars.attr.columns }} ">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-{{ form.vars.attr.icons }}"></i></span>
+
+       {% set classes = 'form-control input-lg' %}
+
+
+       {% if form.vars.valid != true %}
+           {% set classes = classes ~ ' alert-danger ' %}
+           {% endif %}
+
+     {{ form_widget(form,{'attr':{'class':classes }}) }}
+
+
+
+
+   </div>
+
+{% endblock form_row %}
